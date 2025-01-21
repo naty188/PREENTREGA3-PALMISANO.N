@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&family=Ubuntu:ital@0;1&display=swap');
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+*::selection {
+    color: rgba(224, 172, 247, 0.385);
+}
+
+body {
+    background-color: #0a0909;
+}
+
+/* Estilo para el header/nav */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #481555;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Aseguramos que el header esté siempre por encima de otros elementos */
+}
+
+h1 {
+    color: white;
+    padding: 1rem;
+}
+
+p {
+    color: white;
+    text-decoration: none; 
+    text-align: center; 
+    margin: 0 auto;     
+    width: fit-content; 
+}
+
+
+a:hover {
+    text-decoration: underline; /* Esto es opcional si quieres que el enlace tenga subrayado al pasar el cursor */
+}
+
+.logo {
+    max-width: 10rem;
+    object-fit: cover;
+    max-height: 10rem;
+    width: 10rem;
+    height: 10rem;
+    position: relative;
+    animation: puff-in-br .7s cubic-bezier(.47,0.000,.745,.715) both;
+    transition-delay: 5s;
+}
+
+.nav-list {
+    display: flex;
+    list-style-type: none;
+    gap: 1rem;
+}
+
+.nav-list li a {
+    list-style-type: none;
+    text-decoration: none;
+    color: rgb(252, 250, 250);
+    font-size: 25px;
+}
+
+.abrir-menu,
+.cerrar-menu {
+    display: none;
+}
+
+.abrir-menu,
+.cerrar-menu:hover {
+    color: antiquewhite;
+}
+
+/* Submenú oculto por defecto */
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #642f70;
+    list-style: none;
+    padding: 0.5rem;
+    box-shadow: 15px 5px 5px rgb(251, 251, 251);
+    min-width: 80px;
+}
+
+/* Mostrar submenú cuando el padre está activo */
+.nav-list li:hover .submenu {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Botones en el submenú */
+.submenu li {
+    padding: 2px;
+    text-align: center;
+    display: flex;
+    font-size: 1.25rem;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.submenu li button {
+    display: block;
+    border: 0;
+    font-size: 1rem;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.submenu li button:hover {
+    background: #df85f57a;
+}
+
+/* Estilo para el footer */
+footer {
+    color: #fafafa;
+}
+
+/* Estilos para la galería */
+#galeriaContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Asegura que los elementos se distribuyan correctamente */
+    gap: 15px;
+    padding: 20px;
+}
+
+/* Estilo para cada producto */
+.producto-item {
+    position: relative;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.producto-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover para aumentar el tamaño de la imagen */
+.producto-item img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para el carrito */
+#carrito {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    color: #333;
+    width: 220px;
+}
+
+/* Contador de productos en el carrito */
+#carrito span {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+/* Ajustes para la página de carrito */
+#contenedorCarrito {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Usamos grid para productos */
+    gap: 20px;
+    padding: 20px;
+}
+
+.producto-carrito {
+    text-align: center;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.precio{
+    color:#0a0909
+}
+
+.oculto{
+    display: none;
+}
+
+.producto-carrito img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.producto-carrito p {
+    color: white;
+    margin: 10px 0;
+}
+
+/* Para dispositivos móviles */
+@media screen and (max-width: 450px) {
+    .contenedor.productos {
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+        gap: 20px;
+        padding: 40px;
+        color: #efe9e9;
+    }
+
+    /* Navbar para móviles */
+    .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #633480;
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(10, 10, 10, 0.514);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: end;
+    }
+
+    .nav-list li a {
+        color: #faf9fb;
+    }
+
+    .submenu {
+        display: none;
+        list-style: none;
+        gap: 1rem;
+        padding: 4px;
+        margin-right: 5rem;
+        background-color: #4b0c6f;
+        box-shadow: 5px 10px 5px rgba(251, 248, 248, 0.893);
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .submenu li {
+        padding: 1px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .submenu li a {
+        text-align: center;
+        word-break: break-all;
+    }
+}
+
