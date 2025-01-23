@@ -12,8 +12,13 @@
     color: rgba(224, 172, 247, 0.385);
 }
 
+
+
+
 body {
     background-color: #0a0909;
+
+
 }
 
 /* Estilo para el header/nav */
@@ -216,6 +221,44 @@ footer {
     color: white;
     margin: 10px 0;
 }
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: green;
+    color: beige;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    z-index: 9999;
+    background-image: url("../IMG/whatsapp-png-wazapp-logo-whats-whatsapp-logo-whatsapp-icon-2050-removebg-preview.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    padding-bottom: 20px;
+  }
+  
+  .whatsapp-button a {
+    display: block;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+  }
+  
+  .whatsapp-button img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .whatsapp-button:hover {
+    background-color: darkgreen;
+  }
+  
 
 /* Para dispositivos móviles */
 @media screen and (max-width: 450px) {
