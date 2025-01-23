@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&family=Ubuntu:ital@0;1&display=swap');
 
-/* Estilos generales */
+
 * {
     margin: 0;
     padding: 0;
@@ -13,13 +13,12 @@
 }
 
 
-
-
 body {
     background-color: #0a0909;
 
 
 }
+
 
 /* Estilo para el header/nav */
 header {
@@ -30,7 +29,7 @@ header {
     background-color: #481555;
     position: sticky;
     top: 0;
-    z-index: 1000; /* Aseguramos que el header esté siempre por encima de otros elementos */
+    z-index: 1000; /* el header esté siempre por encima de otros elementos */
 }
 
 h1 {
@@ -126,12 +125,12 @@ a:hover {
     background: #df85f57a;
 }
 
-/* Estilo para el footer */
+
 footer {
     color: #fafafa;
 }
 
-/* Estilos para la galería */
+
 #galeriaContainer {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Asegura que los elementos se distribuyan correctamente */
@@ -222,7 +221,7 @@ footer {
     margin: 10px 0;
 }
 
-.whatsapp-button {
+.whatsapp {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -231,36 +230,32 @@ footer {
     background-color: green;
     color: beige;
     padding: 10px 20px;
+    margin-right: 10px;
     border-radius: 5px;
     text-decoration: none;
     z-index: 9999;
     background-image: url("../IMG/whatsapp-png-wazapp-logo-whats-whatsapp-logo-whatsapp-icon-2050-removebg-preview.png");
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
     padding-bottom: 20px;
   }
   
-  .whatsapp-button a {
-    display: block;
-    width: 20px;
-    height: 20px;
-    overflow: hidden;
-  }
   
-  .whatsapp-button img {
+  .whatsapp img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
   }
   
-  .whatsapp-button:hover {
+  .whatsapp:hover {
     background-color: darkgreen;
   }
   
 
-/* Para dispositivos móviles */
+
 @media screen and (max-width: 450px) {
     .contenedor.productos {
         display: grid;
@@ -270,7 +265,7 @@ footer {
         color: #efe9e9;
     }
 
-    /* Navbar para móviles */
+    
     .nav {
         display: flex;
         flex-direction: column;
